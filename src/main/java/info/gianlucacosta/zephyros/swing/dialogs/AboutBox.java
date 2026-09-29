@@ -28,8 +28,7 @@ public class AboutBox extends JDialog {
             Image productImage,
             String productName,
             String productVersion,
-            String copyrightHolder,
-            Optional<String> facebookPageOption
+            String copyrightHolder
     ) {
         setIconImage(windowIcon);
 
@@ -180,19 +179,6 @@ public class AboutBox extends JDialog {
                                         AboutBox.this.getRootPane().setDefaultButton(this);
                                     }
                                 }
-                        );
-
-
-                        facebookPageOption.ifPresent(facebookPage ->
-                                add(
-                                        new JButton("Facebook page") {
-                                            {
-                                                addActionListener(event ->
-                                                        User.openBrowser(facebookPage)
-                                                );
-                                            }
-                                        }
-                                )
                         );
                     }
                 },
